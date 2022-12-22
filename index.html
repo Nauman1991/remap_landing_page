@@ -320,7 +320,8 @@
                     <button class="btn btn-primary">
                       <a
                         href="https://buy.stripe.com/bIY9D9coOd7YgBGaEE"
-                        id="proLink"
+                        class="proLink"
+                        style="color: #f0f0f0"
                         >Select Plan</a
                       >
                     </button>
@@ -355,7 +356,8 @@
                     <button class="btn btn-primary">
                       <a
                         href="https://buy.stripe.com/cN26qX60q9VM4SY28a"
-                        id="starterLink"
+                        class="starterLink"
+                        style="color: #f0f0f0"
                         >Select Plan</a
                       >
                     </button>
@@ -410,12 +412,17 @@
                 role="button"
                 aria-expanded="false"
                 aria-controls="collapseExample"
+                style="margin-bottom: 15px; color: black"
+                id="featureList"
               >
                 <p>
                   Feature List
-                  <span style="padding: 0 0 0 12px"
-                    ><i class="fa fa-arrow-down" aria-hidden="true"></i
-                  ></span>
+                  <span style="padding: 0 0 0 12px" id="arrowDown">
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                  </span>
+                  <span style="padding: 0 0 0 12px; display: none" id="arrowUp">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  </span>
                 </p>
               </a>
 
@@ -425,16 +432,56 @@
                     <thead>
                       <tr>
                         <th scope="col"></th>
-                        <th scope="col"><strong>AGENCY</strong></th>
-                        <th scope="col"><strong>PRO</strong></th>
-                        <th scope="col"><strong>STARTER</strong></th>
-                        <th scope="col"><strong>FREEMIUM</strong></th>
+                        <th scope="col">AGENCY</th>
+                        <th scope="col">PRO</th>
+                        <th scope="col">STARTER</th>
+                        <th scope="col">FREEMIUM</th>
                       </tr>
                     </thead>
                     <tbody>
                       <!-- Live Listings -->
                       <tr style="border-bottom: 0.5px solid black">
-                        <th colspan="5">Live Listings</th>
+                        <th>Live Listings</th>
+                        <th>
+                          <button class="btn btn-primary c-u">
+                            <a
+                              href="javascript:void(0)"
+                              data-toggle="modal"
+                              data-target="#modalRegisterForm"
+                              style="color: #f0f0f0"
+                              >Contact Us</a
+                            >
+                          </button>
+                        </th>
+                        <th>
+                          <button class="btn btn-primary pro">
+                            <a
+                              href="https://buy.stripe.com/bIY9D9coOd7YgBGaEE"
+                              class="proLink"
+                              >Select Plan</a
+                            >
+                          </button>
+                        </th>
+                        <th>
+                          <button class="btn btn-primary starter">
+                            <a
+                              href="https://buy.stripe.com/cN26qX60q9VM4SY28a"
+                              class="starterLink"
+                              >Select Plan</a
+                            >
+                          </button>
+                        </th>
+                        <th>
+                          <button class="btn btn-primary free">
+                            <a
+                              href="javascript:void(0)"
+                              data-toggle="modal"
+                              data-target="#modalRegisterFormFreePlan"
+                              style="color: #f0f0f0"
+                              >Sign up</a
+                            >
+                          </button>
+                        </th>
                       </tr>
 
                       <tr>
@@ -447,6 +494,7 @@
                             ><i class="fa fa-info-circle" id="tech--ninja"></i
                           ></a>
                         </td>
+
                         <td>
                           <svg
                             width="16"
@@ -2596,27 +2644,57 @@
                       <!-- Buy -->
                       <tr>
                         <td></td>
-                        <td class="fw-bold">
-                          <button class="btn btn-primary">
-                            <a href="#">Contact Us</a>
-                          </button>
-                        </td>
-                        <td class="fw-bold">
-                          <button class="btn btn-primary">
-                            <a href="#">Select Plan</a>
-                          </button>
-                        </td>
-                        <td class="fw-bold">
-                          <button class="btn btn-primary">
-                            <a href="#">Select Plan</a>
-                          </button>
-                        </td>
-                        <td class="fw-bold">
-                          <a href
-                            ><button class="btn btn-primary">
-                              <a href="#">Select Plan</a>
-                            </button></a
+                        <td>
+                          <button
+                            class="btn btn-primary c-u"
+                            style="right: 20% !important"
                           >
+                            <a
+                              href="javascript:void(0)"
+                              data-toggle="modal"
+                              data-target="#modalRegisterForm"
+                              style="color: #f0f0f0"
+                              >Contact Us</a
+                            >
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-primary pro"
+                            style="right: 23% !important"
+                          >
+                            <a
+                              href="https://buy.stripe.com/bIY9D9coOd7YgBGaEE"
+                              class="proLink"
+                              >Select Plan</a
+                            >
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-primary starter"
+                            style="right: 21% !important"
+                          >
+                            <a
+                              href="https://buy.stripe.com/cN26qX60q9VM4SY28a"
+                              class="starterLink"
+                              >Select Plan</a
+                            >
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-primary free"
+                            style="right: 18% !important"
+                          >
+                            <a
+                              href="javascript:void(0)"
+                              data-toggle="modal"
+                              data-target="#modalRegisterFormFreePlan"
+                              style="color: #f0f0f0"
+                              >Sign up</a
+                            >
+                          </button>
                         </td>
                       </tr>
                     </tbody>
@@ -2625,7 +2703,18 @@
               </div>
             </div>
           </section>
-          <hr class="my-0" />
+
+          <section class="bg-white py-10" data-aos="fade-right">
+            <div class="container">
+              <div style="text-align: center">
+                <h1
+                  id="textSection1"
+                  style="font-size: 26px; padding: 17px"
+                ></h1>
+                <h2 id="textSection2" style="font-size: 20px"></h2>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
 
@@ -2644,12 +2733,24 @@
                     style="height: 3rem !important"
                   />
                 </div>
-                <div class="icon-list-social mb-5">
-                  <a class="icon-list-social-link" href="#!"
+                <div
+                  class="icon-list-social mb-5"
+                  style="margin: 5px 8px 5px 11px"
+                >
+                  <a
+                    class="icon-list-social-link"
+                    href="https://www.instagram.com/5degrees.property/"
                     ><i class="fab fa-instagram"></i
                   ></a>
-                  <a class="icon-list-social-link" href="#!"
+                  <a
+                    class="icon-list-social-link"
+                    href="https://www.facebook.com/5DegreesProperty/"
                     ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a
+                    class="icon-list-social-link"
+                    href="https://www.linkedin.com/company/5degreesbuyersagents/"
+                    ><i class="fab fa-linkedin"></i
                   ></a>
                 </div>
               </div>
@@ -2692,26 +2793,70 @@
                       <li><a href="#!">Updates</a></li>
                     </ul>
                   </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="text-uppercase-expanded text-xs mb-4">
-                      Legal
-                    </div>
-                    <ul class="list-unstyled mb-0">
-                      <li class="mb-2"><a href="#!">Privacy Policy</a></li>
-                      <li class="mb-2">
-                        <a href="#!">Terms and Conditions</a>
-                      </li>
-                      <li><a href="#!">License</a></li>
-                    </ul>
-                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div
+                  class="col-lg-4 col-md-6 mb-5 mb-lg-0"
+                  style="float: right; font-size: 17px; padding: 1px"
+                >
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                      <a href="#!"
+                        ><i
+                          class="fa fa-map-marker"
+                          style="padding: 3px 11px 0px 3px"
+                        ></i
+                        >11 Wambool St, Bulimba QLD 4171</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="col-lg-4 col-md-6 mb-5 mb-md-0"
+                  style="float: right; font-size: 17px; padding: 1px"
+                >
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                      <a href="#!"
+                        ><i
+                          class="fa fa-phone"
+                          style="padding: 3px 11px 0px 3px"
+                        ></i>
+                        (07) 3193 2533
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="col-lg-4 col-md-6 mb-5 mb-md-0"
+                  style="float: right; font-size: 17px; padding: 1px"
+                >
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                      <a href="#!"
+                        ><i
+                          class="fa fa-clock"
+                          style="padding: 3px 11px 0px 3px"
+                        ></i
+                        >Mon - Fri : 09:00 AM - 5:00 PM</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
             <hr class="my-5" />
             <div class="row gx-5 align-items-center">
-              <div class="col-md-6 text-md-end small">
+              <div class="col-md-12 text-md-end small">
                 <a href="https://5degrees.com.au/privacy-policy/"
                   >Privacy Policy</a
+                >
+                &middot;
+                <a href="https://5degrees.com.au/terms-of-service/"
+                  >Terms of Service</a
                 >
                 &middot;
                 <a href="https://5degrees.com.au/terms-and-conditions/"
@@ -2829,13 +2974,29 @@
       const repeat = false;
       const noArrows = false;
       const noBullets = false;
+      var featureListClick = true;
 
       const container = document.querySelector(".slider-container");
       var slide = document.querySelectorAll(".slider-single");
       var slideTotal = slide.length - 1;
       var slideCurrent = -1;
 
+      var i = 0;
+      var txt1 = "Smart Real Estate Mapping Using AI.";
+      var txt2 = "Focus on properties that matter.";
+      var speed = 50;
+
+      function typeWriter() {
+        if (i < txt1.length) {
+          document.getElementById("textSection1").innerHTML += txt1.charAt(i);
+          document.getElementById("textSection2").innerHTML += txt2.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+
       $(document).ready(function () {
+        typeWriter();
         $('[data-toggle="tooltip"]').tooltip();
 
         $("#btnradio1").on("click", function (e) {
@@ -2847,11 +3008,11 @@
           $("#planPriceStarter").html("$358.80");
           $("#planPriceStarterType").html("Yearly");
 
-          $("#proLink").attr(
+          $(".proLink").attr(
             "href",
             "https://buy.stripe.com/bIY4iP0G69VMgBG001"
           );
-          $("#starterLink").attr(
+          $(".starterLink").attr(
             "href",
             "https://buy.stripe.com/8wMdTpagG8RI716cMP "
           );
@@ -2865,14 +3026,26 @@
           $("#planPriceStarter").html("$34.90");
           $("#planPriceStarterType").html("Monthly");
 
-          $("#proLink").attr(
+          $(".proLink").attr(
             "href",
             "https://buy.stripe.com/bIY9D9coOd7YgBGaEE"
           );
-          $("#starterLink").attr(
+          $(".starterLink").attr(
             "href",
             "https://buy.stripe.com/cN26qX60q9VM4SY28a"
           );
+        });
+
+        $("#featureList").on("click", function (e) {
+          if (featureListClick) {
+            featureListClick = false;
+            $("#arrowDown").hide();
+            $("#arrowUp").show();
+          } else {
+            featureListClick = true;
+            $("#arrowDown").show();
+            $("#arrowUp").hide();
+          }
         });
       });
 
